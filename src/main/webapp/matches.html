@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Scoreboard | Finished Matches</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+<header class="header">
+    <section class="nav-header">
+        <div class="brand">
+            <div class="nav-toggle">
+                <img src="images/menu.png" alt="Logo" class="logo">
+            </div>
+            <span class="logo-text">TennisScoreboard</span>
+        </div>
+        <div>
+            <nav class="nav-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="matches.html">Matches</a>
+            </nav>
+        </div>
+    </section>
+</header>
+<main>
+    <div class="container">
+        <h1>Matches</h1>
+        <div class="input-container">
+            <form id="filter-form">
+                <input class="input-filter" id="filter-input" placeholder="Filter by name" type="text"/>
+                <input type="submit" class="btn-filter" value="Search">
+            </form>
+            <div>
+                <a href="matches.html" id="reset-filter">
+                    <button class="btn-filter">Reset Filter</button>
+                </a>
+            </div>
+        </div>
+
+        <table class="table-matches">
+            <thead>
+            <tr>
+                <th>Player One</th>
+                <th>Player Two</th>
+                <th>Winner</th>
+            </tr>
+            </thead>
+            <tbody id="matches-body">
+            <tr id="no-matches-row" style="display: none;">
+                <td colspan="3">No matches found.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="pagination" id="pagination" style="display: none;">
+            <a class="prev" id="prev-page" href="#"> < </a>
+            <span id="page-numbers"></span>
+            <a class="next" id="next-page" href="#"> > </a>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer">
+        <p>&copy; Tennis Scoreboard, project from <a href="https://zhukovsd.github.io/java-backend-learning-course/">zhukovsd/java-backend-learning-course</a>
+            roadmap.</p>
+    </div>
+</footer>
+</body>
+</html>

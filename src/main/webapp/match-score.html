@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Scoreboard | Match Score</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+<header class="header">
+    <section class="nav-header">
+        <div class="brand">
+            <div class="nav-toggle">
+                <img src="images/menu.png" alt="Logo" class="logo">
+            </div>
+            <span class="logo-text">TennisScoreboard</span>
+        </div>
+        <div>
+            <nav class="nav-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="matches.html">Matches</a>
+            </nav>
+        </div>
+    </section>
+</header>
+<main>
+    <div class="container">
+        <h1>Current match</h1>
+        <div class="current-match-image"></div>
+        <p id="error-message" style="color: red; display: none;"></p>
+        <section class="score">
+            <table class="table">
+                <thead class="result">
+                <tr>
+                    <th class="table-text">Player</th>
+                    <th class="table-text">Sets</th>
+                    <th class="table-text">Games</th>
+                    <th class="table-text">Points</th>
+                </tr>
+                </thead>
+                <tbody id="score-body">
+                <tr class="player1" data-player-index="0">
+                    <td class="table-text" id="player1-name"></td>
+                    <td class="table-text" id="player1-sets"></td>
+                    <td class="table-text" id="player1-games"></td>
+                    <td class="table-text" id="player1-points"></td>
+                    <td class="table-text">
+                        <button class="score-btn point-btn" data-player-name="">Score</button>
+                    </td>
+                </tr>
+                <tr class="player2" data-player-index="1">
+                    <td class="table-text" id="player2-name"></td>
+                    <td class="table-text" id="player2-sets"></td>
+                    <td class="table-text" id="player2-games"></td>
+                    <td class="table-text" id="player2-points"></td>
+                    <td class="table-text">
+                        <button class="score-btn point-btn" data-player-name="">Score</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <div id="winner-message" class="winner-message" style="display: none; text-align: center; margin-top: 20px;">
+            <h2>Match finished!</h2>
+            <p id="winner-text" style="font-size: 1.2em;"></p>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer">
+        <p>&copy; Tennis Scoreboard, project from <a href="https://zhukovsd.github.io/java-backend-learning-course/">zhukovsd/java-backend-learning-course</a>
+            roadmap.</p>
+    </div>
+</footer>
+</body>
+</html>
