@@ -5,6 +5,17 @@
 Всё необходимое лежит в этом каталоге; интернет не нужен.
 **На компьютере должен быть установлен JDK 21** (его и IDE в архив не входят).
 
+## macOS: кратко
+```sh
+unzip tools/apache-maven-3.9.16-bin.zip -d ~/tools   # по желанию, если нет своего Maven; тогда ~/tools/apache-maven-3.9.16/bin/mvn
+scripts/start-db.sh                                  # терминал 1: PostgreSQL
+mvn clean package                                    # терминал 2: сборка + тесты
+unzip tools/apache-tomcat-10.1.61.zip -d ~/tools && chmod +x ~/tools/apache-tomcat-10.1.61/bin/*.sh
+cp target/tennis-scoreboard.war ~/tools/apache-tomcat-10.1.61/webapps/
+~/tools/apache-tomcat-10.1.61/bin/startup.sh         # http://localhost:8080/tennis-scoreboard/
+```
+Если macOS блокирует скачанные бинарники PostgreSQL (Gatekeeper), выполните `xattr -dr com.apple.quarantine .pgdata ~/.embedded-postgres-binaries` или разрешите запуск в «Системных настройках → Конфиденциальность». Не проверялось на реальном Mac: бинарники PostgreSQL для darwin-amd64 и darwin-arm64 лежат в `m2repo`, но тестировал я только на Linux.
+
 ## Что внутри
 | Путь | Назначение |
 |---|---|
