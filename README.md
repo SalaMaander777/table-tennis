@@ -44,4 +44,13 @@ cp target/tennis-scoreboard.war ~/tools/apache-tomcat-10.1.61/webapps/
 - Эндпоинты: `POST /matches`, `POST /matches/{uuid}/point`, `GET /matches/{uuid}`, `GET /matches?page=&player_name=`; ошибки — JSON `{"message": "..."}`.
 
 ## Состав зависимостей (зафиксированные версии)
-Spring 6.2.19 · Hibernate 6.6.59.Final · PostgreSQL JDBC 42.7.14 · Jackson 2.18.12 · Jakarta Servlet 6.0 (Tomcat 10.1) · Lombok 1.18.48 · MapStruct 1.6.3 · JUnit 5.14.4 · embedded-postgres 2.2.2 (PostgreSQL 16.9; бинарники для Linux/Windows/macOS x64 и arm64).
+- **Web:** Spring MVC 6.2.19, Jakarta Servlet 6.0 (Tomcat 10.1), Jackson 2.18.12 (+jsr310)
+- **HTML-шаблоны (на выбор):** Thymeleaf 3.1.6 (`thymeleaf-spring6`) или JSP + JSTL (`jakarta.servlet.jsp.jstl`, JSP API — provided от Tomcat). Для ТЗ они не обязательны: фронтенд статический.
+- **БД:** Hibernate 6.6.59.Final, spring-orm, HikariCP, PostgreSQL JDBC 42.7.14, Flyway 11.20.3 (по желанию)
+- **Валидация:** Hibernate Validator 8.0.3 + Expressly (EL)
+- **Логи:** SLF4J 2.0.17 + Logback 1.5.38
+- **Утилиты:** Lombok 1.18.48, MapStruct 1.6.3
+- **Тесты:** JUnit 5.14.4 (зафиксирован через BOM), Mockito 5.24, AssertJ 3.27, spring-test (MockMvc), JSONPath, embedded-postgres 2.2.2 (PostgreSQL 16.9 для Linux/Windows/macOS x64 и arm64)
+
+Нужна ещё библиотека? Без интернета её не докачать: добавьте её, пока есть сеть, командой
+`mvn -Dmaven.repo.local=m2repo dependency:go-offline` (без `-o`; временно уберите `-o` из `.mvn/maven.config`).
